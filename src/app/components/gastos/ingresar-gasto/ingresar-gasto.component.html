@@ -2,25 +2,41 @@
   <div class="container">
     <div class="row">
       <div class="col-12 col-md-12">
-        <div class="card bg-warning">
+        <div class="card">
           <div class="card-header">
             <h5>Agregar Gasto</h5>
+            <div *ngIf="formularioIncorrecto" class="alert alert-danger text-center">
+              {{ textoIncorrecto | uppercase}}
+            </div>
           </div>
           <div class="card-body">
             <div class="form-group row">
               <div class="col-12 col-md-6">
                 <label for="itemGasto">Gasto</label>
-                <input type="text" id="itemGasto" class="form-control" placeholder="Ej: Supermercado">
+                <input
+                [(ngModel)] = "nombreGasto"
+                type="text"
+                id="itemGasto"
+                class="form-control"
+                placeholder="Ej: Supermercado"
+                >
               </div>
               <div class="col-12 col-md-6 mt-2">
                 <label for="valorGasto">Valor</label>
-                <input type="number" id="valorGasto" class="form-control" placeholder="Ej: 1000">
+                <input
+                [(ngModel)] = "cantidad"
+                type="number"
+                id="valorGasto"
+                class="form-control"
+                placeholder="Ej: 1000"
+                >
               </div>
             </div>
           </div>
           <div class="card-footer">
             <div class="d-grid gap-2 mt-1">
               <button
+              (click)="agregarGasto()"
               class="btn btn-primary"
               type="button"
               >Agregar</button>
