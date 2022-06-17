@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { PresupuestoService } from 'src/app/services/presupuesto.service';
 
 @Component({
   selector: 'app-ingresar-presupuesto',
@@ -9,7 +11,10 @@ export class IngresarPresupuestoComponent implements OnInit {
   cantidad: number; // sera el ngmodel de input
   cantidadIncorrecta: boolean; // boolean para comprobar lo recibido
 
-  constructor() {
+  constructor(
+    private _presupuestoService: PresupuestoService,
+    private router: Router
+    ) {
     this.cantidad = 0;
     this.cantidadIncorrecta = false;
   }
