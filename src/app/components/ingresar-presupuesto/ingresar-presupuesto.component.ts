@@ -27,6 +27,9 @@ export class IngresarPresupuestoComponent implements OnInit {
 
     if(this.cantidad > 0 ){
       this.cantidadIncorrecta = false;
+      this._presupuestoService.presupuesto = this.cantidad;
+      this._presupuestoService.restante = this.cantidad;
+      this.router.navigate(['/gastos']);
     }else{
       this.cantidadIncorrecta = true;
     }
