@@ -6,8 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ingresar-presupuesto.component.css']
 })
 export class IngresarPresupuestoComponent implements OnInit {
+  cantidad: number; // sera el ngmodel de input
+  cantidadIncorrecta: boolean; // boolean para comprobar lo recibido
 
-  constructor() { }
+  constructor() {
+    this.cantidad = 0;
+    this.cantidadIncorrecta = false;
+  }
 
   ngOnInit(): void {
   }
