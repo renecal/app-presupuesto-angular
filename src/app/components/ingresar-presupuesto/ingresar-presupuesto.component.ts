@@ -14,7 +14,17 @@ export class IngresarPresupuestoComponent implements OnInit {
     this.cantidadIncorrecta = false;
   }
 
-  ngOnInit(): void {
+  ngOnInit(): void
+  {
+  }
+
+  agregar(){
+
+    if(this.cantidad > 0 ){
+      this.cantidadIncorrecta = false;
+    }else{
+      this.cantidadIncorrecta = true;
+    }
   }
 
 }

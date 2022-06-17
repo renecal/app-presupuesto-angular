@@ -19,12 +19,16 @@
         <div class="card-body">
           <input
           [(ngModel)] = "cantidad"
-          type="text"
+          type="number"
           class="form-control"
           placeholder="Ingrese su presupuesto"
           >
           <div class="d-grid gap-2 mt-1">
-            <button class="btn btn-primary" type="button">Aceptar</button>
+            <button
+            (click)="agregar()"
+            class="btn btn-primary"
+            type="button"
+            >Aceptar</button>
           </div>
         </div>
       </div>
